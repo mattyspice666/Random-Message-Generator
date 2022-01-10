@@ -45,6 +45,7 @@ function zodiacSign(month, day) {
   }
 }
 
+/* Prompts and message generation */
 let prompt = require("prompt-sync")({ sigint: true });
 
 let name = prompt("What is your name?");
@@ -56,6 +57,7 @@ let birthday = birthMonth + "/" + birthDay;
 console.log(`Your birthday is ${birthday}`);
 console.log(`You are a ${zodiacSign(birthMonth, birthDay)}`);
 
+/* random sentence generation */
 let verbs, nouns, adjectives, adverbs, preposition;
 nouns = [
   "bird",
