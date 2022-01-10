@@ -45,17 +45,124 @@ function zodiacSign(month, day) {
   }
 }
 
-const prompt = require("prompt-sync")({ sigint: true });
+let prompt = require("prompt-sync")({ sigint: true });
 
-const name = prompt("What is your name?");
+let name = prompt("What is your name?");
 console.log(`Hey there, ${name}`);
 
-const birthMonth = prompt("What month were you born? (Only 1-12 please)");
-const birthDay = prompt("What day were your born?");
+let birthMonth = prompt("What month were you born? (Only 1-12 please)");
+let birthDay = prompt("What day were your born?");
 let birthday = birthMonth + "/" + birthDay;
 console.log(`Your birthday is ${birthday}`);
 console.log(`You are a ${zodiacSign(birthMonth, birthDay)}`);
 
-const randomWord = require('random-words');
-let randomMessage = randomWord({ exactly: 5, wordsPerString: 2 });
+let verbs, nouns, adjectives, adverbs, preposition;
+nouns = [
+  "bird",
+  "clock",
+  "boy",
+  "plastic",
+  "duck",
+  "teacher",
+  "old lady",
+  "professor",
+  "hamster",
+  "dog",
+];
+verbs = [
+  "kicked",
+  "ran",
+  "flew",
+  "dodged",
+  "sliced",
+  "rolled",
+  "died",
+  "breathed",
+  "slept",
+  "killed",
+];
+adjectives = [
+  "beautiful",
+  "lazy",
+  "professional",
+  "lovely",
+  "dumb",
+  "rough",
+  "soft",
+  "hot",
+  "vibrating",
+  "slimy",
+];
+adverbs = [
+  "slowly",
+  "elegantly",
+  "precisely",
+  "quickly",
+  "sadly",
+  "humbly",
+  "proudly",
+  "shockingly",
+  "calmly",
+  "passionately",
+];
+preposition = [
+  "down",
+  "into",
+  "up",
+  "on",
+  "upon",
+  "below",
+  "above",
+  "through",
+  "across",
+  "towards",
+];
 
+function randGen() {
+  return Math.floor(Math.random() * 5);
+}
+
+function sentence() {
+  let rand1 = Math.floor(Math.random() * 10);
+  let rand2 = Math.floor(Math.random() * 10);
+  let rand3 = Math.floor(Math.random() * 10);
+  let rand4 = Math.floor(Math.random() * 10);
+  let rand5 = Math.floor(Math.random() * 10);
+  let rand6 = Math.floor(Math.random() * 10);
+  let i = randGen();
+  let content =
+    "The " +
+    adjectives[rand1] +
+    " " +
+    nouns[rand2] +
+    " " +
+    adverbs[rand3] +
+    " " +
+    verbs[rand4] +
+    " because some " +
+    nouns[rand1] +
+    " " +
+    adverbs[rand1] +
+    " " +
+    verbs[rand1] +
+    " " +
+    preposition[rand1] +
+    " a " +
+    adjectives[rand2] +
+    " " +
+    nouns[rand5] +
+    " which, became a " +
+    adjectives[rand3] +
+    ", " +
+    adjectives[rand4] +
+    " " +
+    nouns[rand6] +
+    ".";
+  return content;
+}
+console.log(`Your zodiac message is ${sentence()}`);
+
+
+//let randomWord = require('random-words');
+//let randomMessage = randomWord({ exactly: 5, wordsPerString: 2, join: ' ' });
+//console.log(randomMessage);
