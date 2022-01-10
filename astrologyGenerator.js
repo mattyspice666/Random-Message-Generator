@@ -57,7 +57,7 @@ let birthday = birthMonth + "/" + birthDay;
 console.log(`Your birthday is ${birthday}`);
 console.log(`You are a ${zodiacSign(birthMonth, birthDay)}`);
 
-/* random sentence generation */
+/* random sentence generation found here: https://codepen.io/chiragbhansali/pen/EWppvy */
 let verbs, nouns, adjectives, adverbs, preposition;
 nouns = [
   "bird",
